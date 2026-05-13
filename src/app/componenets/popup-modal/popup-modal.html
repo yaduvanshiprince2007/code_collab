@@ -1,0 +1,37 @@
+@if (isOpen()) {
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center bg-white/60 backdrop-blur-md px-4 py-6"
+    (click)="closeModal()"
+  >
+    <!-- MODAL -->
+    <div
+      class="relative w-full max-w-xl overflow-hidden rounded-3xl bg-white shadow-[0_20px_80px_rgba(0,0,0,0.25)] transition-all duration-300 animate-in fade-in zoom-in-95"
+      (click)="$event.stopPropagation()"
+    >
+      <!-- HEADER -->
+      <div class="flex items-center justify-between border-b border-gray-100 px-7 py-5">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+            {{ title() }}
+          </h2>
+
+          <p class="mt-1 text-sm text-gray-500">Manage and update your information</p>
+        </div>
+
+        <!-- CLOSE BUTTON -->
+        <button
+          type="button"
+          (click)="closeModal()"
+          class="group flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 shadow-sm transition-all duration-200 hover:scale-105 hover:border-red-200 hover:bg-red-50 hover:text-red-500"
+        >
+          <span class="text-lg transition-transform duration-200 group-hover:rotate-90"> ✕ </span>
+        </button>
+      </div>
+
+      <!-- BODY -->
+      <div class="max-h-[70vh] overflow-y-auto px-7 py-6">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+}

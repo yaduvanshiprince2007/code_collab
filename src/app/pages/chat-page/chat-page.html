@@ -1,0 +1,12 @@
+<div class="flex h-screen min-w-screen overflow-hidden bg-gray-100">
+  <!-- LEFT SIDE - PEOPLE LIST (30%) -->
+  <div class="w-[30%] border-r border-gray-200 bg-white">
+    <!-- HEADER -->
+     <app-friends-list [members]="members()" (selectedData)="selectMember($event)" ></app-friends-list>
+  </div>
+
+  <!-- RIGHT SIDE - MESSAGE LIST (70%) -->
+  <div class="flex w-[70%] flex-col bg-gradient-to-b from-gray-50 to-white">
+    <app-chat-box [messages]="messages()"  [selectedUser]="selectedUser()" (sendMessage)="handleSendMessage($event)"></app-chat-box>
+  </div>
+</div>

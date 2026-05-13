@@ -1,0 +1,5 @@
+<app-view-profile [profiledata]="profiledata()" (edit)="editUserDetail($event)"></app-view-profile>
+
+<app-popup-modal [title]="`Update Profile`" [isOpen]="profileDataEdit()" (closed)="editUserDetail($event)">
+  <app-edit-profile [editProfileDetail]="profiledata()" (cancelEdit)="editUserDetail($event)" ></app-edit-profile>
+</app-popup-modal>

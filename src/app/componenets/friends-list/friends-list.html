@@ -1,0 +1,33 @@
+<div class="border-b border-gray-200 px-6 py-5">
+  <h2 class="text-2xl font-bold text-gray-900">Chats</h2>
+
+  <p class="mt-1 text-sm text-gray-500">Team members</p>
+</div>
+
+<!-- PEOPLE LIST -->
+<div class="overflow-y-auto p-4">
+  @for (person of members(); track person.id) {
+    <div
+        (click)="handleSetSelected(person.id)"
+      class="mb-3 cursor-pointer rounded-2xl border border-transparent bg-gray-50 p-4 transition-all duration-300 hover:border-green-100 hover:bg-green-50"
+    >
+      <div class="flex items-center gap-4">
+        <!-- AVATAR -->
+        <div
+          class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 font-semibold text-white shadow-md"
+        >
+          {{ person.avatar }}
+        </div>
+
+        <!-- PERSON INFO -->
+        <div class="flex-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold text-gray-800">
+              {{ person.name }}
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,41 @@
+<!-- Heading -->
+<div class="mb-8 text-center">
+  <h2 class="text-3xl font-bold text-gray-800">Forget Your password</h2>
+
+  <p class="mt-2 text-sm text-gray-500">Enter your email to continue</p>
+</div>
+
+<!-- Form -->
+<form [formGroup]="passwordChangeForm" (ngSubmit)="handleSubmit()" class="space-y-5">
+  <!-- UserId -->
+  <div>
+    <label class="mb-2 block text-sm font-semibold text-gray-700"> Enter your email </label>
+
+    <input
+      type="email"
+      formControlName="email"
+      placeholder="Enter your old passowrd"
+      class="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition-all duration-300 focus:border-green-500 focus:ring-2 focus:ring-green-200"
+    />
+  </div>
+
+  <!-- Submit Button -->
+  <button
+    type="submit"
+    class="w-full rounded-xl bg-green-600 px-4 py-3 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:bg-green-700 hover:shadow-2xl active:scale-95"
+  >
+    Login
+  </button>
+</form>
+
+<!-- Register -->
+<div class="mt-6 text-center">
+  <span class="text-sm text-gray-500"> Don’t have an account? </span>
+
+  <a
+    routerLink="/auth/signup"
+    class="ml-1 text-sm font-semibold text-green-600 transition hover:text-green-700 hover:underline cursor-pointer"
+  >
+    Register
+  </a>
+</div>
